@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps API Test</title>
+    <link rel="stylesheet" href="MapsAPI.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <footer class="footer">
+      <a href="../index.html">Home</a>
+      <a href="../Test/WeatherAPI.html">WeatherAPI</a>
+      <a href="MapsAPI.html">MapsAPI</a>
+      <a href="../DayJS/DayJS.html">DayJS</a>
+  </footer>
+  <div class="body">
+      <main class="container">
+    <h1 id="date"></h1>
+    
+    <div id="map"></div>
+
+    <div class="info-container">
+        <div class="info">
+          <p class="info-label">Moving Speed</p>
+          <p id="current-speed">0 km/h</p>
+        </div>
+        <div class="info">
+          <p class="info-label">Duration</p>
+          <p id="moving-time">00:00:00</p>
+        </div> 
+        <div class="info">
+          <p class="info-label">Average Speed</p>
+          <p id="average-speed">0 km/h</p>
+        </div>
+        <div class="info">
+          <p class="info-label">Total Distance</p>
+          <p id="total-distance">0 km</p>
+        </div>
+      </div>
+
+    <button id="start-button">Start</button>
+  </main>
+  </div>
+
+
+  <script type="module" src="MapsAPI.js"></script>
+  <script src="https://unpkg.com/dayjs@1.11.13/dayjs.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv1MJ9rBD3buHSBsGdDsQAJCfO6lUNJA0&callback=initMap" async defer></script>
+</body>
+</html>

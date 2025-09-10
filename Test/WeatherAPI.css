@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1fr;
+    width: 1fr;
+}
+
+.input {
+    font-size: 16px;
+    padding: 10px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    margin-bottom: 10px;
+    outline: none;
+    width: 430px;
+    text-align: center;
+}
+
+.button {
+    font-size: 16px;
+    cursor: pointer;
+    height: 38px;
+    width: auto;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.button:hover {
+    background-color: rgb(201, 201, 201);
+}
+
+.weather-info-wrapper {
+    margin-top: 20px;
+    padding: 10px;
+    width: 1fr;
+    height: 1fr;
+    min-width: 500px;
+    height: 170px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    background-color: rgb(87, 87, 87);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.emoji {
+    font-size: 120px;
+    margin-top: 10px;
+}
+
+p { 
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.forecast {
+    font-size: 30px;
+   color: black;
+}
+
+.date {
+    font-size: 18px;
+    margin-top: -20px;
+    color: rgb(200, 200, 200);
+    margin-bottom: 10px;
+    color: rgb(218, 218, 218);
+}
+
+.temperature,
+.weather,
+.wind-speed {
+    font-size: 20px;
+    color: rgb(218, 218, 218);
+}

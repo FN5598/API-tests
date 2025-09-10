@@ -1,0 +1,93 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 600px;
+    max-height: auto;
+    position: relative;
+}
+
+#map {
+    width: 500px;
+    height: 500px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#total-distance,
+#average-speed,
+#moving-time,
+#current-speed,
+#date {
+    color: black;
+    font-size: 25px;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info-label {
+    color: gray;
+    font-size: 16px;
+}
+
+#start-button {
+    background-color: orange;
+    border: none;
+    color: rgb(235, 235, 235);
+    font-size: 40px;
+    border-radius: 100px;
+    padding: 26px 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+#start-button:hover {
+    background-color: darkorange;
+}
+
+#start-button:active {
+    background-color: rgb(165, 91, 1);
+}
+
+#start-button::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    background-color: rgb(255, 191, 71);
+    bottom: 0%;
+    left: 5%;
+    border-radius: 10px;
+    z-index: -1;
+}

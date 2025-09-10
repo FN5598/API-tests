@@ -1,0 +1,26 @@
+.body {
+    background-color: rgb(52, 52, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(106, 105, 105);
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.date {
+    color: rgb(206, 206, 206);
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
