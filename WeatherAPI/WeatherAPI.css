@@ -38,8 +38,8 @@
     padding: 10px;
     width: 1fr;
     height: 1fr;
-    min-width: 500px;
-    height: 170px;
+    min-width: 1fr;
+    height: 1fr;
     border-radius: 30px;
     display: flex;
     justify-content: space-around;
@@ -88,9 +88,24 @@ body {
     color: rgb(218, 218, 218);
 }
 
+.feels-like,
 .temperature,
 .weather,
 .wind-speed {
     font-size: 20px;
     color: rgb(218, 218, 218);
+}
+
+.sunrise {
+    margin-top: 10px;
+}
+
+.sunset {
+    margin-top: -4px;
+}
+
+.sunrise,
+.sunset {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(170, 170, 170);
 }

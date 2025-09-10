@@ -6,8 +6,11 @@ const weatherHTML = `
                 <h1 class="forecast"></h1>
                 <p class="date"></p>
                 <p class="temperature" id="temperature"></p>
+                <p class="feels-like"></p>
                 <p class="wind-speed"></p>
                 <p class="weather"></p>
+                <p class="sunrise"></p>
+                <p class="sunset"></p>
             </div>
             <div class="emoji"></div>
         </div>
@@ -59,7 +62,7 @@ async function getWeatherByCity(city) {
         cityTemperature.textContent = '';
         return;
     } 
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&current_weather=true`);
+    const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&current_weather=true&daily=sunrise,sunset&hourly=apparent_temperature`);
     const data = await response.json();
 
     weatherForecast.innerHTML = `${coordinates.country}, ${coordinates.name}`;
@@ -67,6 +70,12 @@ async function getWeatherByCity(city) {
     document.querySelector('.wind-speed').innerHTML = `Wind Speed: ${data.current_weather.windspeed} km/h`;
     let weatherCode = data.current_weather.weathercode;
     document.querySelector('.weather').textContent = `Weather: ${getWeatherDescription(weatherCode)}`;
+    document.querySelector('.sunrise').innerHTML = `Sunrise: ${data.daily.sunrise[0].slice(11)}`;
+    document.querySelector('.sunset').innerHTML = `Sunset: ${data.daily.sunset[0].slice(11)}`;
+    let hourlyTemperatures = data.hourly.apparent_temperature;
+    let currentHour = new Date().getHours();
+    let feelsLikeTemperature = hourlyTemperatures[currentHour];
+    document.querySelector('.feels-like').innerHTML = `Feels like: ${feelsLikeTemperature}°C`;
 };
 
 function getWeatherDescription(code) {
@@ -80,6 +89,9 @@ function getWeatherDescription(code) {
     51: "Light drizzle",
     53: "Moderate drizzle",
     55: "Dense drizzle",
+    56: "Light freezing drizzle",
+    57: "Dense freezing drizzle",
+    60: "Slight rain",
     61: "Light rain",
     63: "Moderate rain",
     65: "Heavy rain",
@@ -111,6 +123,8 @@ function getWeatherDescription(code) {
         currentEmoji = '☁️'; 
     } else if (code === 45 || code === 48) {
         currentEmoji = '🌫️'; 
+    } else {
+        currentEmoji = '🌨️';
     };
     document.querySelector('.emoji').innerHTML = currentEmoji;
     return weatherDescriptions[code] || "Unknown weather condition";
