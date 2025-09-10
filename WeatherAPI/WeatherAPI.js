@@ -27,8 +27,10 @@ let latitude;
 button.addEventListener('click', async () => {
     let city = document.querySelector('.input').value;
     if (!city) return;
-
     await getWeatherByCity(city);
+    weatherContainer.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.4)";
+    weatherContainer.style.backgroundColor = "rgb(87, 87, 87)";
+    weatherContainer.style.borderRadius = "30px";
     document.querySelector('.input').value = '';
     document.querySelector('.date').innerHTML = date;
     });
@@ -37,6 +39,9 @@ document.querySelector(`.input`).addEventListener('keydown', async (event) => {
     if (event.key === "Enter") {
         let city = document.querySelector('.input').value;
         await getWeatherByCity(city);
+        weatherContainer.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.4)";
+        weatherContainer.style.backgroundColor = "rgb(87, 87, 87)";
+        weatherContainer.style.borderRadius = "30px";
         document.querySelector('.input').value = '';
         document.querySelector('.date').innerHTML = date;
     }

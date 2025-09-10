@@ -41,7 +41,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
     margin-top: 50px;
 }
 
@@ -53,7 +53,7 @@
     font-size: 22px;
     text-overflow: clip;
 }
-
+#breaking-bad-quote-container,
 #random-joke-delivery-container,
 #random-joke-setup-container {
     color: rgb(212, 212, 212);
@@ -62,4 +62,16 @@
     align-items: center;
     font-size: 22px;
     text-overflow: clip;
+}
+
+#author {
+    text-align: flex-end;
+    align-self: flex-end;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+body {
+    background-color: rgb(37, 37, 37);
 }
